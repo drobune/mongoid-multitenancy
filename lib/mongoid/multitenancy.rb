@@ -12,6 +12,11 @@ module Mongoid
         Mongoid::VERSION.start_with? '4'
       end
 
+      # Returns true if using Mongoid 5
+      def mongoid5?
+        Mongoid::VERSION.start_with? '5'
+      end
+
       # Set the current tenant. Make it Thread aware
       def current_tenant=(tenant)
         Thread.current[:current_tenant] = tenant
